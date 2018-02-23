@@ -135,7 +135,7 @@ func Identify(url string) (service string) {
 		"You've Discovered A Missing Link. Our Apologies!":														  "INSTAPAGE",
 		"Fastly error: unknown domain":                                                                           "FASTLY",
 		"Sorry, couldn&rsquo;t find the status page":															  "PINGDOM",
-		"This UserVoice subdomain is currently available!":														  "USERVOICE"
+
 		
 		
 		

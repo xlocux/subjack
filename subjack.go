@@ -109,7 +109,6 @@ func Identify(url string) (service string) {
 
 	fingerprints := map[string]string{
 		"ERROR: The request could not be satisfied":                                                              "CLOUDFRONT",
-		"Fastly error: unknown domain":                                                                           "FASTLY",
 		"There isn't a Github Pages site here.":                                                                  "GITHUB",
 		"herokucdn.com/error-pages/no-such-app.html":                                                             "HEROKU",
 		"The gods are wise, but do not know of the site which you seek.":                                         "PANTHEON",
@@ -132,6 +131,14 @@ func Identify(url string) (service string) {
 		"project not found":                                                                                      "SURGE",
 		"Unrecognized domain <strong>":                                                                           "MASHERY",
 		"Repository not found":                                                                                   "BITBUCKET",
+		"The requested URL was not found on this server.":														  "UNBOUNCE",
+		"You've Discovered A Missing Link. Our Apologies!":														  "INSTAPAGE",
+		"Fastly error: unknown domain":                                                                           "FASTLY",
+		"Sorry, couldn&rsquo;t find the status page":															  "PINGDOM",
+		"This UserVoice subdomain is currently available!":														  "USERVOICE"
+		
+		
+		
 	}
 
 	for f, _ := range fingerprints {
@@ -219,6 +226,13 @@ func (s *Http) DNS() {
 			"surge.sh",
 			"mashery.com",
 			"bitbucket.io",
+			"unbouncepages.com",
+			"fastly.net",
+			"pageserve.co",
+			"secure.pageserve.co",
+			"stats.pingdom.com",
+			"uservoice.com",
+			
 		}
 
 		for _, cn := range cnames {
